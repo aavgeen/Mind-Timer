@@ -1,0 +1,37 @@
+{
+  "name": "mind-timer",
+  "version": "1.0.0",
+  "description": "API for Mind Timer app.",
+  "main": "server.js",
+  "scripts": {
+    "install-client": "npm install --prefix client",
+    "server": "node server.js",
+    "dev-server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run dev-server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aavgeen1/Mind-Timer.git"
+  },
+  "keywords": [
+    "meditation",
+    "mind",
+    "timer"
+  ],
+  "author": "Aavgeen Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aavgeen1/Mind-Timer/issues"
+  },
+  "homepage": "https://github.com/aavgeen1/Mind-Timer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
