@@ -1,16 +1,17 @@
 .App {
-  text-align: center;
+  background-color: #252525;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  animation: App-logo-spin infinite 30s linear;
+  height: 60px;
 }
 
+
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color:#191919;
+  height: auto;
+  padding: 5px;
   color: white;
 }
 
@@ -18,11 +19,103 @@
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.App-content {
+  font-size: medium;
+  color: whitesmoke;
+  height: initial;
+  padding-top: 8px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mind-timer {
+  text-align: center;
+  background-color: #252525;
+}
+.breatheIn {
+  animation: breatheInAnimation 5s forwards 1s ease;
+  visibility: hidden;
+}
+@keyframes breatheInAnimation{
+  0%{
+      transform: rotate(0) scale(0) translateX(-20%) translateY(0%) skewX(25deg) skewY(0deg);
+      opacity: 0.0;
+      width: 10px;
+      height: 10px;
+      visibility: visible;
+      }
+  80%{
+      transform: rotate(0) scale(0) translateX(0%) translateY(0%) skewX(25deg) skewY(0deg);
+      opacity: 0.9;
+      visibility: visible;
+      }
+  100%{
+      transform: rotate(0) scale(1.0) translateX(0%) translateY(0%) skewX(0deg) skewY(0deg);
+      opacity: 1.0;
+      visibility: visible;
+      }
+}
+
+.andOut {
+  animation: andOutAnimation 5s forwards 7s ease;
+  visibility: hidden;
+}
+@keyframes andOutAnimation{
+  0%{
+      transform: rotate(0) scale(0) translateX(-20%) translateY(0%) skewX(25deg) skewY(0deg);
+      opacity: 0.0;
+      width: 10px;
+      height: 10px;
+      visibility: visible;
+      }
+  80%{
+      transform: rotate(0) scale(0) translateX(0%) translateY(0%) skewX(25deg) skewY(0deg);
+      opacity: 0.9;
+      visibility: visible;
+      }
+  100%{
+      transform: rotate(0) scale(1.0) translateX(0%) translateY(0%) skewX(0deg) skewY(0deg);
+      opacity: 1.0;
+      visibility: visible;
+      }
+}
+
+.duration {
+  margin: 20px;
+  font-size: x-large;
+}
+.sounds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 20px;
+  font-size: medium;
+}
+.indisounds {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.meditationModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: gray;
+  height:90%;
+  width:90%;
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 4;
 }
