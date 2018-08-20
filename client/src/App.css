@@ -1,5 +1,6 @@
 .App {
   background-color: #252525;
+  padding-bottom: 10px;
 }
 
 .App-logo {
@@ -39,9 +40,20 @@
   align-items: center;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
 .mind-timer {
   text-align: center;
   background-color: #252525;
+  /* margin-bottom: 10px; */
 }
 .breatheIn {
   animation: breatheInAnimation 5s forwards 1s ease;
@@ -92,30 +104,136 @@
 }
 
 .duration {
-  margin: 20px;
-  font-size: x-large;
+  position: relative;
+  font-size: medium;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: auto;
 }
 .sounds {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin: 20px;
   font-size: medium;
+  margin-bottom: 10px;
 }
 .indisounds {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px 20px;
 }
-.meditationModal {
+.meditationModalBack {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%);
-  background-color: gray;
-  height:90%;
-  width:90%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: gray; 
+  /* blur background with gradient dark */
+  height:80%;
+  width:80%;
   border-radius: 20px;
   padding: 20px;
-  z-index: 4;
+  margin: 0;
+  z-index: 3;
+  animation: modalFade 1s forwards 0s ease;
+  overflow: hidden;
+  background-image: radial-gradient(rgb(22, 22, 22), #2C2C2C, rgb(49, 49, 49));
 }
+
+.blur1 {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+.meditationModalContent {
+  z-index: 4;
+  background: transparent;
+  color: whitesmoke;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  font-size: medium;
+}
+.cancelButton {
+  font-size: x-large;
+  background: transparent;
+  border: 0px;
+  color: whitesmoke;
+}
+
+.countdown-timer {
+  position: relative;
+  margin-top: 20%;
+  font-size: 3.5rem;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: bolder;
+}
+
+@keyframes modalFade{
+  0%{
+    transform: translateX(-50%) translateY(-50%) skewX(2deg) skewY(2deg);
+    opacity: 0;
+    }
+30%{
+    opacity: 0.8;
+    }
+100%{
+    opacity: 1;
+    }
+}
+
+.focusButton {
+  padding: 5px 20px;
+  color:whitesmoke;
+  background-color: black;
+  font-size: large;
+  border-radius: 7px;
+  font: inherit;
+  z-index:2;
+  box-shadow: 2px;
+}
+.focusButton:focus {outline:0;}
+
+.time-slider {
+  height: auto;
+  margin: 5px;
+  background-color: whitesmoke;
+  color: black;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60%;
+  width: 20px;
+  font-weight: bold;
+}
+.time-slots {
+  margin: 15px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: rgb(163, 160, 160);
+}
+
+.upDown-btn {
+  background: transparent;
+  color: whitesmoke;
+  font-weight: bold;
+  border: 1px;
+  padding: 3px 2px;
+}
+
+.upDown-btn:focus {outline:0;}
